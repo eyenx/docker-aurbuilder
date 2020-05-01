@@ -6,6 +6,7 @@
 AUR_PACKAGES=$*
 AUR_BASE=${AUR_BASE:-https://aur.archlinux.org/cgit/aur.git/snapshot}
 EXPORT=${EXPORT:-/export}
+REPONAME=${REPONAME:-aur}
 
 function log {
   echo "$(date "+%FT%H:%M:%S") | $1 | $2"
@@ -44,7 +45,7 @@ function main {
       log "INFO" "Copying $BUILTPKG into $EXPORT"
       sudo cp -rf $BUILTPKG $EXPORT
     done 
-  sudo repo-add /export/aur.db.tar.gz /export/*.pkg.tar.xz
+  sudo repo-add /export/$REPONAME.db.tar.gz /export/*.pkg.tar.xz
 }
 
 main 
