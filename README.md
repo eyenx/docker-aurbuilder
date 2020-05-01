@@ -5,6 +5,8 @@ Build your AUR Packages in a container and update your custom repo with repo-add
 
 Accomplished with [auracle-git](https://aur.archlinux.org/packages/auracle-git/)
 
+This is mainly used for [my personal user repository](https://aur.eyenx.ch)
+
 ## Volumes
 
 ```
