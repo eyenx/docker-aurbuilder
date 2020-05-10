@@ -18,8 +18,8 @@ This is mainly used for [my personal user repository](https://aur.eyenx.ch)
 ```
 AUR_BASE=https://aur.archlinux.org/cgit/aur.git/snapshot
 EXPORT=/export # export path
-GPG-KEYS="" # additional GPG-Keys to load
-REPONAME=aur # reponame, used for generation of reponame.db.tar.gz
+ADD_GPG_KEYS="" # additional GPG-Keys to load
+REPONAME=aur # reponame, used for generation of reponame.db.tar.gz, repo-add is run if this is set
 ```
 
 ## TODO

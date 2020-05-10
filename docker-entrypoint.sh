@@ -25,7 +25,7 @@ function main {
   # first check if all given packages exist in AUR
   for PKG in ${AUR_PACKAGES}
     do
-      if curl  -o/dev/null --silent -I -L --fail ${AUR_BASE}/${PKG}.tar.gz
+      if auracle info ${PKG}
         then log "INFO" "${PKG} exists"
       else
         log "ERROR" "${PKG} does not exists in AUR"
