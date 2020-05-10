@@ -34,8 +34,7 @@ function main {
     # clone all packages and deps
     auracle clone -r $PKG
     auracle buildorder $PKG | grep "^AUR " | awk '{print $2}' | while read line 
-      do cd $line ; makepkg -si --noconfirm -c
-         cd .. 
+      do cd $line && makepkg -si --noconfirm -c && cd .. 
       done
     cd $PKG && makepkg -s --noconfirm -c && rm -rf $PKG*_orig_*tar.xz
   done
