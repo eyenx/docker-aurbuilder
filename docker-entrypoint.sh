@@ -19,7 +19,7 @@ function main {
   if [[ -n $ADD_GPG_KEYS ]]
     then 
       for KEY in $ADD_GPG_KEYS
-        do gpg -r $KEY
+        do gpg --recv-keys $KEY
       done 
   fi
   # first check if all given packages exist in AUR
