@@ -12,7 +12,7 @@ RUN pacman -Syy && pacman -S base-devel --noconfirm && pacman -Su --noconfirm &&
 USER aur
 
 RUN cd /home/aur && curl https://aur.archlinux.org/cgit/aur.git/snapshot/auracle-git.tar.gz | tar xvzf - && \
-    cd auracle-git && makepkg -si --noconfirm && \
+    cd auracle-git && makepkg -si --noconfirm && rm -rf auracle-git && \
     sudo rm -rf /var/lib/pacman/sync/* && sudo rm -rf /var/cache/pacman
 
 VOLUME /export
