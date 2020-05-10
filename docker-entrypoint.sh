@@ -37,7 +37,7 @@ function main {
       do cd $line ; makepkg -si --noconfirm -c
          cd .. 
       done
-    cd $PKG && makepkg -s --noconfirm -c && rm $PKG*_orig_*tar.xz
+    cd $PKG && makepkg -s --noconfirm -c && rm -rf $PKG*_orig_*tar.xz
   done
   find /home/aur -iname "*pkg.tar.xz" | while read BUILTPKG
     do 
