@@ -15,7 +15,7 @@ RUN cd /home/aur && curl https://aur.archlinux.org/cgit/aur.git/snapshot/auracle
     cd auracle-git && makepkg -si --noconfirm && cd ../ && rm -rf /home/aur/auracle-git && \ 
     gpg --recv-keys 1D1F0DC78F173680 && \
     gpg --recv-keys 4773BD5E130D1D45 && \
-    gpg --output ./tor.keyring --export 0xEF6E286DDA85EA2A4BA7DE684E2C6E8793298290 && gpg --import tor.keyring && rm tor.keyring && \
+    gpg --output tor.keyring --export 0xEF6E286DDA85EA2A4BA7DE684E2C6E8793298290 && gpg --import tor.keyring && rm tor.keyring && \
     sudo rm -rf /var/lib/pacman/sync/* && sudo rm -rf /var/cache/pacman
 
 VOLUME /export
