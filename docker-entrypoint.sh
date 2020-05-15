@@ -41,14 +41,11 @@ function main {
   find /home/aur -iname "*pkg.tar.xz" | while read BUILTPKG
     do 
       log "INFO" "Copying $BUILTPKG into $EXPORT"
-      sudo cp -rf $BUILTPKG $EXPORT && SUCCESS=1
+      sudo cp -rf $BUILTPKG $EXPORT
     done 
   if [[ -n $REPONAME ]]
   then
-    sudo repo-add /export/$REPONAME.db.tar.gz /export/*.pkg.tar.xz && SUCCESS=1
-  fi
-  if [[ -n $SUCCESS ]]
-    then exit 1
+    sudo repo-add /export/$REPONAME.db.tar.gz /export/*.pkg.tar.xz
   fi
 }
 
