@@ -5,7 +5,7 @@ LABEL maintainer="Toni Tauro <eye@eyenx.ch>"
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
-RUN pacman -Syy && pacman -S base-devel --noconfirm && pacman -Su --noconfirm && \
+RUN pacman -Syy && pacman -S base-devel perl --noconfirm && pacman -Su --noconfirm && \
     useradd -m aur && echo "aur ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     pacman-key --init && pacman-key --populate archlinux && chmod +x /docker-entrypoint.sh
 
