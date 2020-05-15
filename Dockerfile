@@ -16,7 +16,8 @@ RUN cd /home/aur && curl https://aur.archlinux.org/cgit/aur.git/snapshot/auracle
     gpg --recv-keys 1D1F0DC78F173680 && \
     gpg --recv-keys 4773BD5E130D1D45 && \
     curl curl https://demos.traudt.xyz/EF6E286DDA85EA2A4BA7DE684E2C6E8793298290.asc | gpg --import && \
-    sudo rm -rf /var/lib/pacman/sync/* && sudo rm -rf /var/cache/pacman
+    sudo rm -rf /var/lib/pacman/sync/* && sudo rm -rf /var/cache/pacman && \
+    cat /etc/profile.d/perlbin.sh >> .bashrc
 
 VOLUME /export
 
