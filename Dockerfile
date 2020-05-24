@@ -19,6 +19,8 @@ RUN cd /home/aur && curl https://aur.archlinux.org/cgit/aur.git/snapshot/auracle
     sudo rm -rf /var/lib/pacman/sync/* && sudo rm -rf /var/cache/pacman && \
     cat /etc/profile.d/perlbin.sh >> .bashrc
 
+ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+
 VOLUME /export
 
 WORKDIR /home/aur
