@@ -25,7 +25,7 @@ function main {
   # first check if all given packages exist in AUR
   for PKG in ${AUR_PACKAGES}
     do
-      if auracle info ${PKG}
+      if auracle info ${PKG} >/dev/null
         then log "INFO" "${PKG} exists"
       else
         log "ERROR" "${PKG} does not exists in AUR"
