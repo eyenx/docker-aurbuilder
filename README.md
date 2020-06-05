@@ -1,6 +1,6 @@
 # docker-aurbuilder
+![](https://github.com/eyenx/docker-aurbuilder/workflows/build/badge.svg)
 [![](https://images.microbadger.com/badges/image/eyenx/aurbuilder.svg)](https://microbadger.com/images/eyenx/aurbuilder "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/eyenx/aurbuilder.svg)](https://microbadger.com/images/eyenx/aurbuilder "Get your own version badge on microbadger.com")
-[![Circle CI](https://circleci.com/gh/eyenx/docker-aurbuilder.svg?style=svg)](https://circleci.com/gh/eyenx/docker-aurbuilder)
 
 Build your AUR Packages in a container and update your custom repo with repo-add
 
