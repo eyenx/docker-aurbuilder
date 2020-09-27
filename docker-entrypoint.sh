@@ -38,7 +38,7 @@ function main {
       done
     cd $PKG && makepkg -s --noconfirm -c && rm -rf $PKG*_orig_*tar.xz
   done
-  find /home/aur -iname "*pkg.tar.xz" | while read BUILTPKG
+  find /home/aur -iname "*.pkg.tar.*" | while read BUILTPKG
     do 
       log "INFO" "Copying $BUILTPKG into $EXPORT"
       sudo cp -rf $BUILTPKG $EXPORT
