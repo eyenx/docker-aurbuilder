@@ -12,6 +12,7 @@ RUN	pacman -Syy \
 	&& chmod +x /docker-entrypoint.sh
 USER	aur
 RUN	cd /home/aur \
+        && mkdir .gnupg \
         && echo keyserver keyserver.ubuntu.com >> .gnupg/gpg.conf \
 	&& curl https://aur.archlinux.org/cgit/aur.git/snapshot/auracle-git.tar.gz | tar xvzf - \
 	&& cd auracle-git \
