@@ -9,10 +9,10 @@ RUN	pacman -Syy \
 	&& echo "aur ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
 	&& pacman-key --init \
 	&& pacman-key --populate archlinux \
-	&& chmod +x /docker-entrypoint.sh \
-        && echo keyserver keyserver.ubuntu.com >> /etc/pacman.d/gnupg/gpg.conf
+	&& chmod +x /docker-entrypoint.sh
 USER	aur
 RUN	cd /home/aur \
+        && echo keyserver keyserver.ubuntu.com >> .gnupg/gpg.conf \
 	&& curl https://aur.archlinux.org/cgit/aur.git/snapshot/auracle-git.tar.gz | tar xvzf - \
 	&& cd auracle-git \
 	&& makepkg -si --noconfirm \

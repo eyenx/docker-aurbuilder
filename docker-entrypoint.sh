@@ -18,9 +18,7 @@ function main {
   # if GPG-KEYS needed, import them
   if [[ -n $ADD_GPG_KEYS ]]
     then 
-      for KEY in $ADD_GPG_KEYS
-        do gpg --recv-keys $KEY
-      done 
+      gpg --recv-keys $ADD_GPG_KEYS
   fi
   # first check if all given packages exist in AUR
   for PKG in ${AUR_PACKAGES}
@@ -36,7 +34,7 @@ function main {
     auracle buildorder $PKG | grep "^AUR " | awk '{print $2}' | while read line 
       do cd $line && makepkg -si --noconfirm -c && cd .. 
       done
-    cd $PKG && makepkg -s --noconfirm -c && rm -rf $PKG*_orig_*tar.xz
+    cd $PKG && makepkg -s --noconfirm -c && rm -rf $PKG*_orig_*tar*
   done
   find /home/aur -iname "*.pkg.tar.*" | while read BUILTPKG
     do 
