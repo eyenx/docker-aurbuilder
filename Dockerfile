@@ -1,7 +1,12 @@
 	
 FROM	archlinux:latest
+
 LABEL	maintainer="Toni Tauro <eye@eyenx.ch>"
-ADD	docker-entrypoint.sh	/docker-entrypoint.sh
+
+#ADD	docker-entrypoint.sh	/docker-entrypoint.sh
+
+RUN pacman -Tv
+
 RUN pacman -Tv \	
     && pacman -Syy \
 	&& pacman -S base-devel perl --noconfirm \
