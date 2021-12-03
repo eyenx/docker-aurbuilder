@@ -3,7 +3,7 @@ FROM	archlinux:latest
 LABEL	org.opencontainers.image.authors="Toni Tauro <eye@eyenx.ch>"
 ADD	docker-entrypoint.sh	/docker-entrypoint.sh
 RUN	pacman -Syy \
-	&& pacman -S base-devel perl libffi --noconfirm \
+	&& pacman -S base-devel perl libffi icu --noconfirm \
 	&& pacman -Su --noconfirm \
 	&& useradd -m aur \
 	&& echo "aur ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
