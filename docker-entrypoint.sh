@@ -13,6 +13,8 @@ function log {
 
 function main {
   # first sync pacman
+  log "INFO" "Populating pacman-keys"
+  sudo pacman-key --populate
   log "INFO" "Syncing repositories"
   sudo pacman -Syy &>/dev/null
   # if GPG-KEYS needed, import them
